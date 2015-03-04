@@ -1,0 +1,4 @@
+Numero de soluções possíveis: 135. 
+Custo da melhor solução: 13. 
+Configuração da melhor solução: C1-C5, C2-C3, C2-C4, C4-C5, . 
+Tempo de execução: 7111ms. 
