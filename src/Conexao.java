@@ -17,16 +17,21 @@ public class Conexao {
     // Identificador da conexão
     private int id;
     
+    // Custo da conexão
+    private int custo;
+    
     /**
      * Construtor da classe.
      * @param inicial Ponto inicial
      * @param terminal Ponto final
      * @param id Idenficador da conexão
+     * @param custo Custo da conexão
      */
-    public Conexao(Casa inicial, Casa terminal, int id) {
+    public Conexao(Casa inicial, Casa terminal, int id, int custo) {
         this.inicial = inicial;
         this.terminal = terminal;
         this.id = id;
+        this.custo = custo;
     }
 
     /**
@@ -77,4 +82,19 @@ public class Conexao {
         this.id = id;
     }
 
+    /**
+     * 
+     * @return Custo da conexão
+     */
+    public int getCusto() {
+    	return custo;
+    }
+    
+    /**
+     * Altera o valor do custo da conexão.
+     * @param custo Custo da conexão
+     */
+    public void setCusto(int custo) {
+    	this.custo = custo;
+    }
 }
