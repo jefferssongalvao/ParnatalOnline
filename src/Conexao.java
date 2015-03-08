@@ -9,10 +9,10 @@
 public class Conexao {
 
 	// Ponto inicial
-    private Casa inicial;
+    private House inicial;
     
     // Ponto final
-    private Casa terminal;
+    private House terminal;
     
     // Identificador da conexão
     private int id;
@@ -27,7 +27,7 @@ public class Conexao {
      * @param id Idenficador da conexão
      * @param custo Custo da conexão
      */
-    public Conexao(Casa inicial, Casa terminal, int id, int custo) {
+    public Conexao(House inicial, House terminal, int id, int custo) {
         this.inicial = inicial;
         this.terminal = terminal;
         this.id = id;
@@ -38,7 +38,7 @@ public class Conexao {
      * 
      * @return Ponto inicial
      */
-    public Casa getInicial() {
+    public House getInicial() {
         return inicial;
     }
 
@@ -46,7 +46,7 @@ public class Conexao {
      * Altera o ponto inicial. 
      * @param inicial Ponto inicial.
      */
-    public void setInicial(Casa inicial) {
+    public void setInicial(House inicial) {
         this.inicial = inicial;
     }
 
@@ -54,7 +54,7 @@ public class Conexao {
      * 
      * @return Ponto final.
      */
-    public Casa getTerminal() {
+    public House getTerminal() {
         return terminal;
     }
 
@@ -62,7 +62,7 @@ public class Conexao {
      * Altera o ponto final.
      * @param terminal Ponto final
      */
-    public void setTerminal(Casa terminal) {
+    public void setTerminal(House terminal) {
         this.terminal = terminal;
     }
     
