@@ -6,7 +6,7 @@
  * @version 04.03.2015
  */
 
-public class Conexao {
+public class Connection {
 
 	// Ponto inicial
     private House inicial;
@@ -27,7 +27,7 @@ public class Conexao {
      * @param id Idenficador da conexão
      * @param custo Custo da conexão
      */
-    public Conexao(House inicial, House terminal, int id, int custo) {
+    public Connection(House inicial, House terminal, int id, int custo) {
         this.inicial = inicial;
         this.terminal = terminal;
         this.id = id;
