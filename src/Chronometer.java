@@ -10,7 +10,7 @@
  * @author Rubem Kalebe
  * @version 04.03.2015
  */
-public class Cronometro {
+public class Chronometer {
 
 	// Armazena o tempo de início da contagem
 	private static long startValue;
