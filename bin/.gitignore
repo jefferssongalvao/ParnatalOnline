@@ -11,3 +11,7 @@
 /House.class
 /Connection.class
 /Chronometer.class
+/Network.class
+/DistributionNetwork.class
+/ReadNetworkInfo.class
+/ReadInfoFromFile.class
