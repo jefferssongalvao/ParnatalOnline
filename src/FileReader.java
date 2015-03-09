@@ -13,9 +13,7 @@ public class FileReader {
 	 * @param path Caminho do arquivo de entrada
 	 * @param matrix Matriz de custos a ser preenchida
 	 */
-	public static void readFile(String path, Matrix matrix) {
-		MatrixReader mr = new MatrixReader();
-		mr.read(matrix, path);
+	public static void readFile(String path) {
 		ReadInfoFromFile.readInfo(path);
 	}
 	
