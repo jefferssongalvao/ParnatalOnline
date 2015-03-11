@@ -1,11 +1,11 @@
 /**
- * A classe BestNetwork é responsável por procurar a melhor solução e armazenar
- * dados sobre essa solução, como quantidade de soluções geradas e tempo gasto.
+ * A classe BestNetwork é responsável por procurar a melhor solução (a rede com
+ * menor custo).
  * 
  * @author Jeffersson Galvão
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
- * @version 08.03.2015
+ * @version 11.03.2015
  */
 
 public class BestNetwork {
@@ -23,9 +23,8 @@ public class BestNetwork {
 	private Matrix costMatrix;
 	
 	/**
-	 * Costrutor da classe; Inicializa campos e faz a leitura/preenchimento
-	 * da matriz de custos para o problema dado.
-	 * @param inputFilePath Caminho/Nome+extensão do arquivo
+	 * Costrutor da classe; Inicializa campos.
+	 * @param costMatrix Matriz de custos
 	 */
 	public BestNetwork(Matrix costMatrix) {
 		bestTree = new Network();
@@ -43,8 +42,8 @@ public class BestNetwork {
 		                           edges(Network.getVertexMax())]; // Número de rotas possíveis
 																			// equivalente ao somatório de 1...n
 		Network tree = new Network();
-		Chronometer.start();
 		int countEdges = 0; // Índice da aresta
+		Chronometer.start();
 		for(int i = 0; i < Network.getVertexMax(); i++) {
 			for(int j = i; j < Network.getVertexMax(); j++) {
 				if(i != j) {
@@ -60,8 +59,6 @@ public class BestNetwork {
 	
 	/**
 	 * Método que computa as combinações de arestas possíveis.
-	 * No momento, ele computa algumas combinações de árvores mais de uma vez,
-	 * mas todas as combinações válidas e possíveis são verificadas.
 	 * @param link Vetor de conexões/arestas
 	 * @param size Número de arestas na árvore
 	 * @param startPosition Posição de início no vetor link
@@ -112,7 +109,7 @@ public class BestNetwork {
 	}
 	
 	/**
-	 * Calcula o número de arestas
+	 * Calcula o número de arestas.
 	 * @param n Número de vértice/casas
 	 * @return Número de arestas/ligações/conexões diferentes na rede
 	 */
