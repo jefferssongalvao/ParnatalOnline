@@ -68,7 +68,7 @@ public class BestNetwork {
 			Network tree) {
 		if(size == 0) {
 			if((solutions == 0) || (tree.totalCost() < bestTree.totalCost())) {
-				bestTree.update(tree);
+				bestTree.changeNetwork(tree);
 			}
 			solutions++;
 			return;

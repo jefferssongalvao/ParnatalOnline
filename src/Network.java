@@ -4,8 +4,9 @@ import java.util.Vector;
  * A classe Network representa uma árvore (rede) de distribuição válida.
  * 
  * @author Jeffersson Galvão
+ * @author Lilian Ketlyn
  * @author Rubem Kalebe
- * @version 08.03.2015
+ * @version 11.03.2015
  */
 
 public class Network {
@@ -77,7 +78,7 @@ public class Network {
 	 * Adiciona uma rede de distribuição; Troca as informações atuais pelas novas.
 	 * @param tree Nova rede de distribuição
 	 */
-	public void update(Network tree) {
+	public void changeNetwork(Network tree) {
 		if(tree != null) {
 			this.tree = new Vector<Connection>(tree.getTree());
 			this.degree = new int[tree.getDegree().length];
