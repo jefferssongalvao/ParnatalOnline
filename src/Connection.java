@@ -1,5 +1,5 @@
 /**
- * Essa classe é responsável por representar a conexão entre duas casas.
+ * Essa classe representa a conexão entre duas casas.
  * 
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
