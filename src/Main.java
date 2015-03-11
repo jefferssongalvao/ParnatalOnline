@@ -14,7 +14,7 @@ public class Main {
 			FileReader.readFile(args[0]);
 			BestNetwork best = new BestNetwork(args[0]);
 			best.findBest();
-			WriteResultsToFile writer = new WriteResultsToFile();
+			WriteResultsToOUT writer = new WriteResultsToOUT();
 			writer.writeToFile(best);
 			//best.generateXML();
 			System.out.println("Menor custo: " + best.getBest().totalCost());
