@@ -20,13 +20,13 @@ public class BestNetwork {
 	private long executionTime;
 	
 	// Matriz de custos para o problema dado
-	private Matrix costMatrix;
+	private CostMatrix costMatrix;
 	
 	/**
 	 * Costrutor da classe; Inicializa campos.
 	 * @param costMatrix Matriz de custos
 	 */
-	public BestNetwork(Matrix costMatrix) {
+	public BestNetwork(CostMatrix costMatrix) {
 		bestTree = new Network();
 		solutions = 0;
 		executionTime = 0;

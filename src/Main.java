@@ -13,7 +13,7 @@ public class Main {
 		if(args.length > 0) {
 			FileLoader loader = new FileLoader(args[0]);
 			loader.readNetworkInfo();
-			Matrix costMatrix = new Matrix(Network.getVertexMax());
+			CostMatrix costMatrix = new CostMatrix(Network.getVertexMax());
 			loader.readCostMatrix(costMatrix);
 			BestNetwork best = new BestNetwork(costMatrix);
 			best.findBest();
