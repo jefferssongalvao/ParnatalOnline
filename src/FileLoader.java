@@ -95,5 +95,21 @@ public class FileLoader {
 			System.err.println("Erro ao abrir arquivo \'" + path + "\'");
 		}
 	}
+
+	/**
+	 * 
+	 * @return Caminho do arquivo de entrada
+	 */
+	public String getPath() {
+		return path;
+	}
+
+	/**
+	 * Altera o caminho do arquivo de entrada
+	 * @param path Novo caminho do arquivo de entrada
+	 */
+	public void setPath(String path) {
+		this.path = path;
+	}
 	
 }
