@@ -3,13 +3,26 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Vector;
 
-public class GenerateXML {
+/**
+ * Classe responsável por salvar as conexões da rede em um arquivo XML, o que é
+ * necessário para a exibir a árvore de maneira gráfica.
+ * 
+ * @author Lilian Ketlyn
+ * @author Rubem Kalebe
+ * @version 10.03.2015
+ */
+
+public class GenerateXML implements WriteResultsToFile {
 
 	/**
 	 * Método responsável por gerar o arquivo XML que servirá de base para o grafo que
 	 * será criado pelo framework PREFUSE.
+	 * 
+	 * Salva as conexões da rede.
+	 * 
+	 * @param best Melhor rede de distribuição
 	 */
-	public void generateXML(BestNetwork best) {
+	public void writeToFile(BestNetwork best) {
 		StringBuffer arquivo = new StringBuffer(
 				"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
 				"<graphml xmlns=\"http://graphml.graphdrawing.org/xmlns\"\n" +
