@@ -11,8 +11,11 @@ public class Main {
 	public static void main(String[] args) {
 		
 		if(args.length > 0) {
-			FileReader.readFile(args[0]);
-			BestNetwork best = new BestNetwork(args[0]);
+			FileLoader loader = new FileLoader(args[0]);
+			loader.readNetworkInfo();
+			Matrix costMatrix = new Matrix(Network.getVertexMax());
+			loader.readCostMatrix(costMatrix);
+			BestNetwork best = new BestNetwork(costMatrix);
 			best.findBest();
 			WriteResultsToOUT writer = new WriteResultsToOUT();
 			writer.writeToFile(best);

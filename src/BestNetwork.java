@@ -26,18 +26,12 @@ public class BestNetwork {
 	 * Costrutor da classe; Inicializa campos e faz a leitura/preenchimento
 	 * da matriz de custos para o problema dado.
 	 * @param inputFilePath Caminho/Nome+extensão do arquivo
-	 * @throws java.lang.IllegalArgumentException Caso o parâmetro esteja vazio 
 	 */
-	public BestNetwork(String inputFilePath) {
-		if(inputFilePath == "") {
-			throw new IllegalArgumentException("Arquivo de leitura inválido!");
-		}
+	public BestNetwork(Matrix costMatrix) {
 		bestTree = new Network();
 		solutions = 0;
 		executionTime = 0;
-		costMatrix = new Matrix(Network.getVertexMax());
-		MatrixReader mr = new MatrixReader();
-		mr.read(costMatrix, inputFilePath);
+		this.costMatrix = costMatrix;
 	}
 	
 	/**

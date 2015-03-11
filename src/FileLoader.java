@@ -4,28 +4,63 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
- * Essa classe é responsável por ler um arquivo e inicializar a matriz de custos.
+ * Essa classe é responsável por ler as informações contidas em um arquivo.
  * 
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
- * @version 08.03.2015
+ * @version 11.03.2015
  */
 
-public class MatrixReader implements ReadMatrix {
+public class FileLoader {
 
+	// Caminho do arquivo de entrada
+	private String path;
+	
 	/**
-	 * Método que realiza a leitura de um arquivo e preenche a matriz com os dados obtidos.
-	 * @param path Caminho/Nome+extensão do arquivo
+	 * Construtor da classe de leitura de arquivo.
+	 * @param path Caminho do arquivo a ser lido
+	 */
+	public FileLoader(String path) {
+		this.path = path;
+	}
+	
+	/**
+	 * Lê a quantidade máxima de vértices (casas) e grau máximo a partir do arquivo.
+	 * @throws java.util.NoSuchElementException Caso o arquivo esteja incompleto
+	 */
+	public void readNetworkInfo() {
+		try {
+			Scanner scan = new Scanner(new FileReader(path));
+			if(scan.hasNextInt()) {
+				Network.setVertexMax(scan.nextInt());
+				if(scan.hasNextInt()) {
+					Network.setDegreeMax(scan.nextInt());
+					scan.close();
+					return;
+				}
+			}
+			System.err.println("Problema na leitura do arquivo \'" 
+					+ path + "\'");
+			scan.close();
+			throw new NoSuchElementException("Estão faltando informações" +
+					"sobre as restrinções da rede");
+		} catch(FileNotFoundException e) {
+			System.err.println("Erro ao abrir arquivo \'" + path + "\'");
+		}
+	}
+	
+	/**
+	 * Método que preenche a matriz a partir dos dados do arquivo de entrada.
+	 * @param matrix Matriz de custo a ser preenchida
 	 * @throws java.util.NoSuchElementException Caso o arquivo esteja incompleto 
 	 */
 	@SuppressWarnings("unused")
-	public void read(Matrix matrix, String path) {
+	public void readCostMatrix(Matrix matrix) {
 		try {
 			int cX;
 			Scanner scan = new Scanner(new FileReader(path));
 			for(int i = 0; i < 2; i++) {
-				// Ignorar 'n' e 'd' que já foram lidos do arquivo
-				// e não interessam a matriz
+				// Ignorar 'n' e 'd' que não interessam a matriz
 				if(scan.hasNextInt()) {
 					int tmp = scan.nextInt();
 				} else {
