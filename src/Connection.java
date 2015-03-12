@@ -1,5 +1,5 @@
 /**
- * Essa classe é responsável por representar a conexão entre duas casas.
+ * Essa classe é responsável por representar a conexão entre duas residências.
  * 
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
@@ -7,13 +7,7 @@
  */
 
 public class Connection extends Edge {
-
-	// Ponto inicial
-    private Residence inicial;
-    
-    // Ponto final
-    private Residence terminal;
-       
+     
     /**
      * Construtor da classe.
      * @param inicial Ponto inicial
@@ -33,7 +27,7 @@ public class Connection extends Edge {
      * @return Ponto inicial
      */
     public Residence getInicial() {
-        return inicial;
+        return (Residence) inicial;
     }
 
     /**
@@ -49,7 +43,7 @@ public class Connection extends Edge {
      * @return Ponto final.
      */
     public Residence getTerminal() {
-        return terminal;
+        return (Residence) terminal;
     }
 
     /**

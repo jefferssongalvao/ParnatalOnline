@@ -8,6 +8,12 @@
 
 public abstract class Edge {
 
+	// Ponto inicial
+    Vertice inicial;
+    
+    // Ponto final
+    Vertice terminal;
+	
 	// Identificador da aresta
     int id;
     
