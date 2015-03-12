@@ -5,7 +5,7 @@ import java.util.Vector;
  * 
  * @author Jeffersson Galvão
  * @author Rubem Kalebe
- * @version 08.03.2015
+ * @version 12.03.2015
  */
 
 public class Network {

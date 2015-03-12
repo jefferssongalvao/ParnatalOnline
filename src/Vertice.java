@@ -12,6 +12,13 @@ public abstract class Vertice {
     int id;
     
     /**
+     * Construtor da classe abstrata; inicializa campo ID.
+     */
+    public Vertice() {
+    	id = 0;
+    }
+    
+    /**
      * 
      * @return Identificador do vertice
      */

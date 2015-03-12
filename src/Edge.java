@@ -19,7 +19,17 @@ public abstract class Edge {
     
     // Custo da aresta
     int custo;
-     
+    
+    /**
+     * Construtor da classe abstrata; Inicializa campos.
+     */
+    public Edge() {
+    	inicial = null;
+    	terminal = null;
+    	id = 0;
+    	custo = 0;
+    }
+    
     /**
      * 
      * @return Identificador da aresta.
