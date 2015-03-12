@@ -6,7 +6,7 @@
  * @version 04.03.2015
  */
 
-public class House {
+public class Residence {
     
     // Identificador da casa
     private int id;
@@ -15,7 +15,7 @@ public class House {
      * Construtor da classe.
      * @param id Identificador da casa
      */
-    public House(int id) {
+    public Residence(int id) {
         this.id = id;
     }
     

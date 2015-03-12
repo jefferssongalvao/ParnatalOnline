@@ -48,8 +48,8 @@ public class BestNetwork {
 		for(int i = 0; i < Network.getVertexMax(); i++) {
 			for(int j = i; j < Network.getVertexMax(); j++) {
 				if(i != j) {
-					link[countEdges++] = new Connection(new House(i+1), 
-							new House(j+1), countEdges, costMatrix.getElement(i, j));
+					link[countEdges++] = new Connection(new Residence(i+1), 
+							new Residence(j+1), countEdges, costMatrix.getElement(i, j));
 				}
 			}
 		}
