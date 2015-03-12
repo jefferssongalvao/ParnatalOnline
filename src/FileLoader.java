@@ -55,7 +55,7 @@ public class FileLoader {
 	 * @throws java.util.NoSuchElementException Caso o arquivo esteja incompleto 
 	 */
 	@SuppressWarnings("unused")
-	public void readCostMatrix(Matrix matrix) {
+	public void readCostMatrix(CostMatrix matrix) {
 		try {
 			int cX;
 			Scanner scan = new Scanner(new FileReader(path));

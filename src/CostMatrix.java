@@ -10,7 +10,7 @@
  * @version 08.03.2015
  */
 
-public class Matrix {
+public class CostMatrix {
 
 	// Matriz de custos
 	private int[][] matrix;
@@ -23,7 +23,7 @@ public class Matrix {
 	 * @param n Tamanho da matriz
 	 * @throws java.lang.IllegalArgumentException se n < 0
 	 */
-	public Matrix(int n) {
+	public CostMatrix(int n) {
 		if(n < 0) {
 			throw new IllegalArgumentException("Tamanho inválido para a matriz!");
 		}
