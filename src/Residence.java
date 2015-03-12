@@ -1,5 +1,5 @@
 /**
- * Essa classe é responsável por representar uma casa no cenário.
+ * Essa classe é responsável por representar uma residência no cenário.
  * 
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
