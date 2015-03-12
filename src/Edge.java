@@ -8,24 +8,16 @@
 
 public abstract class Edge {
 
-	// Ponto inicial
-    Vertice inicial;
-    
-    // Ponto final
-    Vertice terminal;
-	
 	// Identificador da aresta
-    int id;
+    protected int id;
     
     // Custo da aresta
-    int custo;
+    protected int custo;
     
     /**
      * Construtor da classe abstrata; Inicializa campos.
      */
     public Edge() {
-    	inicial = null;
-    	terminal = null;
     	id = 0;
     	custo = 0;
     }

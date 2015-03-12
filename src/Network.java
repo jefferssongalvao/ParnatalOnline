@@ -4,23 +4,15 @@ import java.util.Vector;
  * A classe Network representa uma árvore (rede) de distribuição válida.
  * 
  * @author Jeffersson Galvão
+ * @author Lilian Ketlyn
  * @author Rubem Kalebe
  * @version 12.03.2015
  */
 
-public class Network {
+public class Network extends Graph {
 
-	// Vetor contendo as arestas (conexões) da árvore; Tem tamanho n-1 (qntd de arestas)
+	// Vetor contendo as arestas da árvore; Tem tamanho n-1 (qntd de arestas)
 	private Vector<Connection> tree;
-	
-	// Vetor que armazena o grau de cada vértice (casa)
-	private int[] degree;
-	
-	// Estrutura union-find para verificar ciclos na solução
-	private UnionFind uf;
-	
-	// Custo da solução
-	private int totalCost = 0;
 	
 	// Quantidade máxima de vértices (casa)
 	private static int vertexMax = 0;
@@ -77,7 +69,7 @@ public class Network {
 	 * Adiciona uma rede de distribuição; Troca as informações atuais pelas novas.
 	 * @param tree Nova rede de distribuição
 	 */
-	public void update(Network tree) {
+	public void changeNetwork(Network tree) {
 		if(tree != null) {
 			this.tree = new Vector<Connection>(tree.getTree());
 			this.degree = new int[tree.getDegree().length];
@@ -96,14 +88,6 @@ public class Network {
 	}
 	
 	/**
-	 * 
-	 * @return Vetor que armazena o grau de cada vértice (casa)
-	 */
-	public int[] getDegree() {
-		return degree;
-	}
-	
-	/**
 	 * Recebe o ID de um vértice e retorna o grau do mesmo.
 	 * @param i Casa/vértice
 	 * @return Grau do vértice em questão
@@ -115,22 +99,6 @@ public class Network {
 		} else {
 			return degree[id-1]; 
 		}
-	}
-	
-	/**
-	 * 
-	 * @return Custo da solução
-	 */
-	public int totalCost() {
-		return totalCost;
-	}
-	
-	/**
-	 * 
-	 * @return Estrutura union-find da rede
-	 */
-	public UnionFind getUnionFind() {
-		return uf;
 	}
 	
 	/**

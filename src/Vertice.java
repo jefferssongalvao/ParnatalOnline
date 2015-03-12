@@ -9,7 +9,7 @@
 public abstract class Vertice {
 
     // Identificador do vertice
-    int id;
+    protected int id;
     
     /**
      * Construtor da classe abstrata; inicializa campo ID.
