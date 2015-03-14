@@ -5,7 +5,7 @@
  * @author Jeffersson Galvão
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
- * @version 08.03.2015
+ * @version 12.03.2015
  */
 
 public class BestNetwork {
@@ -44,6 +44,26 @@ public class BestNetwork {
 																			// equivalente ao somatório de 1...n
 		Network tree = new Network();
 		Chronometer.start();
+		initializeLinkVector(link);
+		combinations(link, Network.getVertexMax()-1, 0, tree); // Computa as combinações de arestas possíveis
+		Chronometer.stop();
+		executionTime = Chronometer.elapsedTime();
+	}
+	
+	/**
+	 * Calcula o número de arestas
+	 * @param n Número de vértice/casas
+	 * @return Número de arestas/ligações/conexões diferentes na rede
+	 */
+	private int edges(int n) {
+	    return (n * (n - 1)) / 2;
+	}
+
+	/**
+	 * Inicializa vetor de conexões com todas as possíveis conexões entre as residências.
+	 * @param link Vetor de conexões
+	 */
+	private void initializeLinkVector(Connection[] link) {
 		int countEdges = 0; // Índice da aresta
 		for(int i = 0; i < Network.getVertexMax(); i++) {
 			for(int j = i; j < Network.getVertexMax(); j++) {
@@ -53,15 +73,10 @@ public class BestNetwork {
 				}
 			}
 		}
-		combinations(link, Network.getVertexMax()-1, 0, tree); // Computa as combinações de arestas possíveis
-		Chronometer.stop();
-		executionTime = Chronometer.elapsedTime();
 	}
 	
 	/**
 	 * Método que computa as combinações de arestas possíveis.
-	 * No momento, ele computa algumas combinações de árvores mais de uma vez,
-	 * mas todas as combinações válidas e possíveis são verificadas.
 	 * @param link Vetor de conexões/arestas
 	 * @param size Número de arestas na árvore
 	 * @param startPosition Posição de início no vetor link
@@ -70,8 +85,8 @@ public class BestNetwork {
 	private void combinations(Connection[] link, int size, int startPosition,
 			Network tree) {
 		if(size == 0) {
-			if((solutions == 0) || (tree.totalCost() < bestTree.totalCost())) {
-				bestTree.update(tree);
+			if((solutions == 0) || (tree.totalCost() < bestTree.totalCost())) {			
+				bestTree.changeNetwork(tree);
 			}
 			solutions++;
 			return;
@@ -110,14 +125,5 @@ public class BestNetwork {
 	public long getExecutionTime() {
 		return executionTime;
 	}
-	
-	/**
-	 * Calcula o número de arestas
-	 * @param n Número de vértice/casas
-	 * @return Número de arestas/ligações/conexões diferentes na rede
-	 */
-	private int edges(int n) {
-        return (n * (n - 1)) / 2;
-    }
 	
 }

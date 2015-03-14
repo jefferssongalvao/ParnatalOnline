@@ -9,7 +9,7 @@ import java.util.Vector;
  * 
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
- * @version 10.03.2015
+ * @version 14.03.2015
  */
 
 public class GenerateXML implements WriteResultsToFile {
@@ -34,8 +34,9 @@ public class GenerateXML implements WriteResultsToFile {
 		for(int i = 1; i <= Network.getVertexMax(); i++) {
 			arquivo.append(" <node id=\"" + String.valueOf(i) + "\"/>\n");
 		}
-		Vector<Connection> links = new Vector<Connection>(best.getBest().getTree()); 
-        for(Connection edge : links) {
+		Vector<Edge> links = new Vector<Edge>(best.getBest().getTree()); 
+        for(Edge edge : links) {
+        	edge = (Connection) edge;
         	arquivo.append(" <edge source=\"" + String.valueOf(edge.getInicial().getID()) + "\" target=\"" + String.valueOf(edge.getTerminal().getID()) + "\"/>\n");
         }
 		arquivo.append("</graph>\n");

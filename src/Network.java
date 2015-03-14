@@ -4,24 +4,13 @@ import java.util.Vector;
  * A classe Network representa uma árvore (rede) de distribuição válida.
  * 
  * @author Jeffersson Galvão
+ * @author Lilian Ketlyn
  * @author Rubem Kalebe
- * @version 08.03.2015
+ * @version 14.03.2015
  */
 
-public class Network {
+public class Network extends Tree {
 
-	// Vetor contendo as arestas (conexões) da árvore; Tem tamanho n-1 (qntd de arestas)
-	private Vector<Connection> tree;
-	
-	// Vetor que armazena o grau de cada vértice (casa)
-	private int[] degree;
-	
-	// Estrutura union-find para verificar ciclos na solução
-	private UnionFind uf;
-	
-	// Custo da solução
-	private int totalCost = 0;
-	
 	// Quantidade máxima de vértices (casa)
 	private static int vertexMax = 0;
 	
@@ -32,13 +21,7 @@ public class Network {
 	 * Construtor sem parâmetros para a classe; Inicializa o básico.
 	 */
 	public Network() {
-		tree = new Vector<Connection>();
-		degree = new int[vertexMax];
-		for(int i = 0; i < degree.length; i++) {
-			degree[i] = 0;
-		}
-		uf = new UnionFind(vertexMax);
-		totalCost = 0;
+		super(vertexMax);
 	}
 	
 	/**
@@ -68,7 +51,8 @@ public class Network {
 		totalCost -= tree.get(tree.size()-1).getCusto();
 		tree.remove(tree.size()-1);
 		uf = new UnionFind(vertexMax);
-		for(Connection edge : tree) {
+		for(Edge edge : tree) {
+			edge = (Connection) edge;
 			uf.union(edge.getInicial().getID(), edge.getTerminal().getID());
 		}		
 	}
@@ -77,30 +61,14 @@ public class Network {
 	 * Adiciona uma rede de distribuição; Troca as informações atuais pelas novas.
 	 * @param tree Nova rede de distribuição
 	 */
-	public void update(Network tree) {
+	public void changeNetwork(Network tree) {
 		if(tree != null) {
-			this.tree = new Vector<Connection>(tree.getTree());
+			this.tree = new Vector<Edge>(tree.getTree());
 			this.degree = new int[tree.getDegree().length];
 			this.degree = tree.getDegree().clone();
 			this.uf = tree.getUnionFind();
 			this.totalCost = tree.totalCost();
 		}
-	}
-	
-	/**
-	 * 
-	 * @return Vetor contendo as arestas (conexões) da árvore
-	 */
-	public Vector<Connection> getTree() {
-		return tree;
-	}
-	
-	/**
-	 * 
-	 * @return Vetor que armazena o grau de cada vértice (casa)
-	 */
-	public int[] getDegree() {
-		return degree;
 	}
 	
 	/**
@@ -115,22 +83,6 @@ public class Network {
 		} else {
 			return degree[id-1]; 
 		}
-	}
-	
-	/**
-	 * 
-	 * @return Custo da solução
-	 */
-	public int totalCost() {
-		return totalCost;
-	}
-	
-	/**
-	 * 
-	 * @return Estrutura union-find da rede
-	 */
-	public UnionFind getUnionFind() {
-		return uf;
 	}
 	
 	/**
