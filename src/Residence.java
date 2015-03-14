@@ -3,7 +3,7 @@
  * 
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
- * @version 12.03.2015
+ * @version 14.03.2015
  */
 
 public class Residence extends Vertice {
@@ -13,7 +13,7 @@ public class Residence extends Vertice {
      * @param id Identificador da casa
      */
     public Residence(int id) {
-        this.id = id;
+        super(id);
     }
     
 }

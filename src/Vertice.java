@@ -3,7 +3,7 @@
  * 
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
- * @version 12.03.2015
+ * @version 14.03.2015
  */
 
 public abstract class Vertice {
@@ -16,6 +16,14 @@ public abstract class Vertice {
      */
     public Vertice() {
     	id = 0;
+    }
+    
+    /**
+     * Construtor da classe abstrata; inicializa campo ID.
+     * @param id Identificador do vertice
+     */
+    public Vertice(int id) {
+    	this.id = id;
     }
     
     /**
