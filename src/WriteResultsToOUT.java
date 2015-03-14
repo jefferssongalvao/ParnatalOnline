@@ -24,10 +24,11 @@ public class WriteResultsToOUT implements WriteResultsToFile {
 		final String filename = "BestSolution.out";
 		try {			
             FileWriter writer = new FileWriter(filename);
-            Vector<Connection> links = new Vector<Connection>(best.getBest().getTree()); 
+            Vector<Edge> links = new Vector<Edge>(best.getBest().getTree()); 
             writer.write("Menor custo: " + Integer.toString(best.getBest().totalCost()) + "\n");
             writer.write("Árvore de menor custo: ");
-            for(Connection edge : links) {
+            for(Edge edge : links) {
+            	edge = (Connection) edge;
             	writer.write(Integer.toString(edge.getInicial().getID()) + "-" + Integer.toString(edge.getTerminal().getID()));
             	writer.write(' ');
             }
