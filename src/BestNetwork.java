@@ -85,7 +85,7 @@ public class BestNetwork {
 	private void combinations(Connection[] link, int size, int startPosition,
 			Network tree) {
 		if(size == 0) {
-			if((solutions == 0) || (tree.totalCost() < bestTree.totalCost())) {
+			if((solutions == 0) || (tree.totalCost() < bestTree.totalCost())) {			
 				bestTree.changeNetwork(tree);
 			}
 			solutions++;

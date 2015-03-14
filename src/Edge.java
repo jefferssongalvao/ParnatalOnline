@@ -40,8 +40,8 @@ public abstract class Edge {
     public Edge(Vertice inicial, Vertice terminal, int id, int custo) {
     	this.inicial = inicial;
     	this.terminal = terminal;
-    	id = 0;
-    	custo = 0;
+    	this.id = id;
+    	this.custo = custo;
     }
     
     /**
