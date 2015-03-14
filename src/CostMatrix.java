@@ -2,21 +2,16 @@
  * A classe Matrix é responsável por armazenar a matriz de custos necessária para a
  * criação de conexões entre as casas de Parnatal.
  * 
- * Os dados que alimentam a matriz são advindos de um arquivo.
- * 
  * @author Jeffersson Galvão
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
- * @version 08.03.2015
+ * @version 11.03.2015
  */
 
 public class CostMatrix {
 
 	// Matriz de custos
 	private int[][] matrix;
-	
-	// Tamanho da matriz
-	int n;
 	
 	/**
 	 * Construtor para a matriz de custos.
@@ -27,7 +22,6 @@ public class CostMatrix {
 		if(n < 0) {
 			throw new IllegalArgumentException("Tamanho inválido para a matriz!");
 		}
-		this.n = n;
 		matrix = new int[n][n];
 	}
 	
@@ -72,7 +66,7 @@ public class CostMatrix {
 	 * @return Retorna o tamanho da matriz
 	 */
 	public int size() {
-		return n;
+		return matrix.length;
 	}
 
 }
