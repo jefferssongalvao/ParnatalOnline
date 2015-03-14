@@ -3,29 +3,20 @@
  * 
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
- * @version 12.03.2015
+ * @version 14.03.2015
  */
 
 public class Connection extends Edge {
-
-	// Ponto inicial
-    private Residence inicial;
-    
-    // Ponto final
-    private Residence terminal;
 	
     /**
-     * Construtor da classe.
+     * Construtor da classe; Inicializa campos.
      * @param inicial Ponto inicial
      * @param terminal Ponto final
      * @param id Idenficador da conexão
      * @param custo Custo da conexão
      */
     public Connection(Residence inicial, Residence terminal, int id, int custo) {
-        this.inicial = inicial;
-        this.terminal = terminal;
-        this.id = id;
-        this.custo = custo;
+        super(inicial, terminal, id, custo);
     }
 
     /**
@@ -33,7 +24,7 @@ public class Connection extends Edge {
      * @return Ponto inicial
      */
     public Residence getInicial() {
-        return inicial;
+        return (Residence) inicial;
     }
 
     /**
@@ -49,7 +40,7 @@ public class Connection extends Edge {
      * @return Ponto final.
      */
     public Residence getTerminal() {
-        return terminal;
+        return (Residence) terminal;
     }
 
     /**
