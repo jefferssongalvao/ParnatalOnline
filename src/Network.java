@@ -6,14 +6,11 @@ import java.util.Vector;
  * @author Jeffersson Galvão
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
- * @version 12.03.2015
+ * @version 14.03.2015
  */
 
-public class Network extends Graph {
+public class Network extends Tree {
 
-	// Vetor contendo as arestas da árvore; Tem tamanho n-1 (qntd de arestas)
-	private Vector<Connection> tree;
-	
 	// Quantidade máxima de vértices (casa)
 	private static int vertexMax = 0;
 	
@@ -24,13 +21,7 @@ public class Network extends Graph {
 	 * Construtor sem parâmetros para a classe; Inicializa o básico.
 	 */
 	public Network() {
-		tree = new Vector<Connection>();
-		degree = new int[vertexMax];
-		for(int i = 0; i < degree.length; i++) {
-			degree[i] = 0;
-		}
-		uf = new UnionFind(vertexMax);
-		totalCost = 0;
+		super(vertexMax);
 	}
 	
 	/**
@@ -60,7 +51,8 @@ public class Network extends Graph {
 		totalCost -= tree.get(tree.size()-1).getCusto();
 		tree.remove(tree.size()-1);
 		uf = new UnionFind(vertexMax);
-		for(Connection edge : tree) {
+		for(Edge edge : tree) {
+			edge = (Connection) edge;
 			uf.union(edge.getInicial().getID(), edge.getTerminal().getID());
 		}		
 	}
@@ -71,20 +63,12 @@ public class Network extends Graph {
 	 */
 	public void changeNetwork(Network tree) {
 		if(tree != null) {
-			this.tree = new Vector<Connection>(tree.getTree());
+			this.tree = new Vector<Edge>(tree.getTree());
 			this.degree = new int[tree.getDegree().length];
 			this.degree = tree.getDegree().clone();
 			this.uf = tree.getUnionFind();
 			this.totalCost = tree.totalCost();
 		}
-	}
-	
-	/**
-	 * 
-	 * @return Vetor contendo as arestas (conexões) da árvore
-	 */
-	public Vector<Connection> getTree() {
-		return tree;
 	}
 	
 	/**

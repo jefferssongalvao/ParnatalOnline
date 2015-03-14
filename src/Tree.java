@@ -1,13 +1,20 @@
+import java.util.Vector;
+
 /**
- * Classe abstrata que serve de modelo para um grafo.
+ * Classe abstrata que serve de modelo para uma árvore.
+ * 
+ * Vamos ter especificamente um grafo acíclico e conexo.
  * 
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
- * @version 12.03.2015
+ * @version 14.03.2015
  */
 
-public abstract class Graph {
+public abstract class Tree {
 
+	// Vetor contendo as arestas da árvore; Tem tamanho n-1 (qntd de arestas)
+	protected Vector<Edge> tree;
+	
 	// Vetor que armazena o grau de cada vértice
 	protected int[] degree;
 	
@@ -20,12 +27,35 @@ public abstract class Graph {
 	/**
 	 * Construtor da classe abstrata; Inicializa campos.
 	 */
-	public Graph() {
+	public Tree() {
+		tree = null;
 		degree = null;
 		uf = null;
 		totalCost = 0;
 	}
 	
+	/**
+	 * Construtor da classe abstrata; Inicializa campos.
+	 * @param vertexMax
+	 */
+	public Tree(int vertexMax) {
+		tree = new Vector<Edge>();
+		degree = new int[vertexMax];
+		for(int i = 0; i < degree.length; i++) {
+			degree[i] = 0;
+		}
+		uf = new UnionFind(vertexMax);
+		totalCost = 0;
+	}
+
+	/**
+	 * 
+	 * @return Vetor contendo as arestas do grafo;
+	 */
+	public Vector<Edge> getTree() {
+		return tree;
+	}
+
 	/**
 	 * 
 	 * @return Vetor que armazena o grau de cada vértice
@@ -51,6 +81,14 @@ public abstract class Graph {
 	}
 
 	/**
+	 * Altera o vetor que contém as arestas do grafo;
+	 * @param tree
+	 */
+	public void setTree(Vector<Edge> tree) {
+		this.tree = tree;
+	}
+
+	/**
 	 * Altera o vetor que armazena o grau de cada vértice.
 	 * @param degree Vetor que armazena o grau de cada vértice
 	 */
@@ -72,7 +110,6 @@ public abstract class Graph {
 	 */
 	public void setTotalCost(int totalCost) {
 		this.totalCost = totalCost;
-	}
-	
+	}	
 	
 }
