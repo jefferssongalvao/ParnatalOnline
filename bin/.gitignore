@@ -1,27 +1,3 @@
-<<<<<<< HEAD
 /Chronometer.class
-/Tree.class
-=======
-/Casa.class
-/Conexao.class
-/Cronometro.class
-/UnionFind.class
-/Matrix.class
-/CostMatrix.class
-/PrintMatrix.class
-/MatrixPrinter.class
-/ReadMatrix.class
-/MatrixReader.class
-/House.class
-/Connection.class
-/Chronometer.class
-/Network.class
-/DistributionNetwork.class
-/ReadNetworkInfo.class
-/ReadInfoFromFile.class
-/BestNetwork.class
-/BestDistributionNetwork.class
-/GenerateXML.class
-/WriteBestToFile.class
+/Residence$House.class
 /WriteResultsToFile.class
->>>>>>> e0b72dda5584a4213de3bd266fdca16fc23dab7a

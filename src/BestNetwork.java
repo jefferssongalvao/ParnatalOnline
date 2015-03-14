@@ -1,15 +1,11 @@
 /**
- * A classe BestNetwork é responsável por procurar a melhor solução (a rede com
- * menor custo).
+ * A classe BestNetwork é responsável por procurar a melhor solução e armazenar
+ * dados sobre essa solução, como quantidade de soluções geradas e tempo gasto.
  * 
  * @author Jeffersson Galvão
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
-<<<<<<< HEAD
- * @version 12.03.2015
-=======
- * @version 11.03.2015
->>>>>>> e0b72dda5584a4213de3bd266fdca16fc23dab7a
+ * @version 14.03.2015
  */
 
 public class BestNetwork {
@@ -27,8 +23,9 @@ public class BestNetwork {
 	private CostMatrix costMatrix;
 	
 	/**
-	 * Costrutor da classe; Inicializa campos.
-	 * @param costMatrix Matriz de custos
+	 * Costrutor da classe; Inicializa campos e faz a leitura/preenchimento
+	 * da matriz de custos para o problema dado.
+	 * @param inputFilePath Caminho/Nome+extensão do arquivo
 	 */
 	public BestNetwork(CostMatrix costMatrix) {
 		bestTree = new Network();
@@ -46,7 +43,6 @@ public class BestNetwork {
 		                           edges(Network.getVertexMax())]; // Número de rotas possíveis
 																			// equivalente ao somatório de 1...n
 		Network tree = new Network();
-<<<<<<< HEAD
 		Chronometer.start();
 		initializeLinkVector(link);
 		combinations(link, Network.getVertexMax()-1, 0, tree); // Computa as combinações de arestas possíveis
@@ -68,15 +64,12 @@ public class BestNetwork {
 	 * @param link Vetor de conexões
 	 */
 	private void initializeLinkVector(Connection[] link) {
-=======
->>>>>>> e0b72dda5584a4213de3bd266fdca16fc23dab7a
 		int countEdges = 0; // Índice da aresta
-		Chronometer.start();
 		for(int i = 0; i < Network.getVertexMax(); i++) {
 			for(int j = i; j < Network.getVertexMax(); j++) {
 				if(i != j) {
-					link[countEdges++] = new Connection(new House(i+1), 
-							new House(j+1), countEdges, costMatrix.getElement(i, j));
+					link[countEdges++] = new Connection(new Residence(i+1), 
+							new Residence(j+1), countEdges, costMatrix.getElement(i, j));
 				}
 			}
 		}
@@ -92,11 +85,7 @@ public class BestNetwork {
 	private void combinations(Connection[] link, int size, int startPosition,
 			Network tree) {
 		if(size == 0) {
-<<<<<<< HEAD
 			if((solutions == 0) || (tree.totalCost() < bestTree.totalCost())) {			
-=======
-			if((solutions == 0) || (tree.totalCost() < bestTree.totalCost())) {
->>>>>>> e0b72dda5584a4213de3bd266fdca16fc23dab7a
 				bestTree.changeNetwork(tree);
 			}
 			solutions++;
@@ -137,16 +126,4 @@ public class BestNetwork {
 		return executionTime;
 	}
 	
-<<<<<<< HEAD
-=======
-	/**
-	 * Calcula o número de arestas.
-	 * @param n Número de vértice/casas
-	 * @return Número de arestas/ligações/conexões diferentes na rede
-	 */
-	private int edges(int n) {
-        return (n * (n - 1)) / 2;
-    }
-	
->>>>>>> e0b72dda5584a4213de3bd266fdca16fc23dab7a
 }
