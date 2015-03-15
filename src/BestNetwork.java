@@ -1,5 +1,5 @@
 /**
- * A classe BestNetwork é responsável por procurar a melhor solução e armazenar
+ * A classe BestNetwork é responsável por procurar a melhor solução, armazenando
  * dados sobre essa solução, como quantidade de soluções geradas e tempo gasto.
  * 
  * @author Jeffersson Galvão

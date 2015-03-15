@@ -6,11 +6,7 @@ import java.util.Vector;
  * @author Jeffersson Galvão
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
-<<<<<<< HEAD
  * @version 14.03.2015
-=======
- * @version 11.03.2015
->>>>>>> e0b72dda5584a4213de3bd266fdca16fc23dab7a
  */
 
 public class Network extends Tree {
