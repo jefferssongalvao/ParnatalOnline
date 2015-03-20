@@ -3,7 +3,7 @@
  * 
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
- * @version 09.03.2015
+ * @version 14.03.2015
  */
 
 public class Main {
@@ -19,7 +19,6 @@ public class Main {
 			best.findBest();
 			WriteResultsToOUT writer = new WriteResultsToOUT();
 			writer.writeToFile(best);
-			//best.generateXML();
 			System.out.println("Menor custo: " + best.getBest().totalCost());
 			System.out.println("Soluções válidas: " + best.getSolutions());
 			System.out.println("Tempo total gasto na busca pela solução: " +

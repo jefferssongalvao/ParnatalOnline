@@ -5,7 +5,6 @@
  * A classe é formada por métodos estáticos de inicio e término de contagem e o tempo
  * transcorrido pode ser obtido através de outro método, também estático.
  * 
- * @author Jeffersson Galvão
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
  * @version 04.03.2015

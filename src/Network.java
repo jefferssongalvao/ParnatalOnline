@@ -3,7 +3,6 @@ import java.util.Vector;
 /**
  * A classe Network representa uma árvore (rede) de distribuição válida.
  * 
- * @author Jeffersson Galvão
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
  * @version 14.03.2015

@@ -9,7 +9,6 @@
  * 	- http://algs4.cs.princeton.edu/15uf/UF.java.html
  * 	- http://marathoncode.blogspot.com.br/2013/01/conjuntos-disjuntos.html
  * 
- * @author Jeffersson Galvão
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
  * @version 04.03.2015

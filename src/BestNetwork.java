@@ -2,7 +2,6 @@
  * A classe BestNetwork é responsável por procurar a melhor solução, armazenando
  * dados sobre essa solução, como quantidade de soluções geradas e tempo gasto.
  * 
- * @author Jeffersson Galvão
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
  * @version 14.03.2015

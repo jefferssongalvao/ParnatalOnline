@@ -2,7 +2,6 @@
  * A classe Matrix é responsável por armazenar a matriz de custos necessária para a
  * criação de conexões entre as casas de Parnatal.
  * 
- * @author Jeffersson Galvão
  * @author Lilian Ketlyn
  * @author Rubem Kalebe
  * @version 11.03.2015
